@@ -5,10 +5,10 @@ Este es un pequeño script creado para publicar vía Twitter la cotización del 
 (y obligado a través de un cronjob para que haga el trabajo.)
 
 ### Las cotizaciones del Bitcoin son tomadas de:
-> - [BitStamp](www.bitstamp.net)
-> - [Coinbase](www.coinbase.com)
-> - [Blockchain.info](www.blockchain.info)
-> - [XAPO](www.xapo.com)
+> [BitStamp](www.bitstamp.net)
+> [Coinbase](www.coinbase.com)
+> [Blockchain.info](www.blockchain.info)
+> [XAPO](www.xapo.com)
 
 ### La cotización del dólar es tomada de:
 > [MaxiCambios](www.maxicambios.com.py)
