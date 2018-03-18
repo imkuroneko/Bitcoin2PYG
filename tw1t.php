@@ -12,11 +12,11 @@
 	# Open Twitter connection
 	$twitter	=	new TwitterOAuth(consumerKey, consumerSecret, accessToken, accessTokenSecret);
 
-	# Let's open our image generator
-	include('./bitcoin_price_img.php');
+	# Path Folder
+	$path = dirname(__FILE__);
 
 	# And let's twit!
-	$image = $twitter->upload('media/upload', ['media' => './twit.png']);
+	$image = $twitter->upload('media/upload', ['media' => $path.'/twit.png']);
 	$params = ['media_ids' => implode(',', [$image->media_id_string])];
 	$result = $twitter->post('statuses/update', $params);
 ?>
