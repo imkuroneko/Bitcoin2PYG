@@ -1,4 +1,4 @@
-Bitcoin2PYG
+Bitcoin2PYG v2
 ===================
 Este es un pequeño script creado para publicar vía Twitter la cotización del Bitcoin en Guaranies (PYG)
 
@@ -16,6 +16,3 @@ Este es un pequeño script creado para publicar vía Twitter la cotización del 
 La ruta funcional para crear el cronjob es este (cPanel):
 > /usr/local/bin/php -q /home/usuario_de_cpanel/public_html/carpeta_de_tu_bot/tw1t.php
 
-----------
-:octocat: Si en algún momento lo utilizas y/o te resulta útil este pequeño proyecto, tirame unos bits
-> 1HQW2gR2wnULKMq5PNaSMjTLMucJh6qLqK
