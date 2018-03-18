@@ -4,8 +4,11 @@
 	# image size
 	$image	=	ImageCreate(743, 400);
 
+	# path
+	$path = dirname(__FILE__);
+
 	# image background
-	$image	=	ImageCreateFromPNG('./images/background.png');
+	$image	=	ImageCreateFromPNG($path.'/images/background.png');
 
 	# text colors (rgb)
 	$gray		= ImageColorAllocate($image, 81, 81, 81);
@@ -14,9 +17,10 @@
 	$light_gray	= ImageColorAllocate($image, 241, 241, 241);
 
 	# fonts
-	$ubuntu_medium	= './fonts/ubuntu_medium.ttf';
-	$ubuntu_light	= './fonts/ubuntu_light.ttf';
-	$open_sans		= './fonts/open_sans_regular.ttf';
+	$ubuntu_medium	= $path.'/fonts/ubuntu_medium.ttf';
+	$ubuntu_light	= $path.'/fonts/ubuntu_light.ttf';
+	$open_sans		= $path.'/fonts/open_sans_regular.ttf';
+
 
 	/*======= Bitcoin API requests ========*/
 	require('api_maxicambios.php');
@@ -44,11 +48,12 @@
 	ImageTTFText ( $image, 8, 0, 15, 385, $light_blue, $open_sans, $footer );
 
 	# logos
-	$coinbase_logo		= ImageCreateFromPNG('./images/logos/coinbase.png');
-	$blockchain_logo	= ImageCreateFromPNG('./images/logos/blockchain.png');
-	$xapo_logo			= ImageCreateFromPNG('./images/logos/xapo.png');
-	$bitstamp_logo		= ImageCreateFromPNG('./images/logos/bitstamp.png');
-	$maxicambios_logo	= ImageCreateFromPNG('./images/logos/maxicambios.png');
+	$coinbase_logo		= ImageCreateFromPNG($path.'/images/logos/coinbase.png');
+	$blockchain_logo	= ImageCreateFromPNG($path.'/images/logos/blockchain.png');
+	$xapo_logo			= ImageCreateFromPNG($path.'/images/logos/xapo.png');
+	$bitstamp_logo		= ImageCreateFromPNG($path.'/images/logos/bitstamp.png');
+	$maxicambios_logo	= ImageCreateFromPNG($path.'/images/logos/maxicambios.png');
+
 
 	# add logos into our image
 	# ( $image - $image2load - coords_X - coords_Y - source_X_2copy - source_Y_2copy - img_width - size_height )
@@ -59,13 +64,5 @@
 	ImageCopy( $image, $maxicambios_logo,	57, 280, 0, 0, 127, 36 );
 
 	# render for save it
-	if(file_exists('./twit.png')) {
-        unlink('./twit.png');	    
-    	ImagePNG($image, './twit.png');
-	} else {
-    	ImagePNG($image, './twit.png');
-	}
-	
-	# Release memory used
-	ImageDestroy($image);
+	ImagePNG($image, $path.'twit.png');
 ?>
