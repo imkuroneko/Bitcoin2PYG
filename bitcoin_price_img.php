@@ -18,7 +18,6 @@
 	$ubuntu_light	= './fonts/ubuntu_light.ttf';
 	$open_sans		= './fonts/open_sans_regular.ttf';
 
-
 	/*======= Bitcoin API requests ========*/
 	require('api_maxicambios.php');
 	require('api_bitcoin.php');
@@ -51,7 +50,6 @@
 	$bitstamp_logo		= ImageCreateFromPNG('./images/logos/bitstamp.png');
 	$maxicambios_logo	= ImageCreateFromPNG('./images/logos/maxicambios.png');
 
-
 	# add logos into our image
 	# ( $image - $image2load - coords_X - coords_Y - source_X_2copy - source_Y_2copy - img_width - size_height )
 	ImageCopy( $image, $coinbase_logo,		45,  90, 0, 0, 150, 50 );
@@ -60,9 +58,14 @@
 	ImageCopy( $image, $bitstamp_logo,		45, 195, 0, 0, 150, 50 );
 	ImageCopy( $image, $maxicambios_logo,	57, 280, 0, 0, 127, 36 );
 
-	# render image for show it
-	ImagePNG($image);
-
 	# render for save it
-	ImagePNG($image, './twit.png');
+	if(file_exists('./twit.png')) {
+        unlink('./twit.png');	    
+    	ImagePNG($image, './twit.png');
+	} else {
+    	ImagePNG($image, './twit.png');
+	}
+	
+	# Release memory used
+	ImageDestroy($image);
 ?>
