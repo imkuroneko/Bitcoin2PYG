@@ -9,12 +9,11 @@
 	define('accessToken',		'__change_me__');
 	define('accessTokenSecret',	'__change_me__');
 
-
 	# Open Twitter connection
 	$twitter	=	new TwitterOAuth(consumerKey, consumerSecret, accessToken, accessTokenSecret);
 
 	# Let's open our image generator
-	include('bitcoin_price_img.php');
+	include('./bitcoin_price_img.php');
 
 	# And let's twit!
 	$image = $twitter->upload('media/upload', ['media' => './twit.png']);
