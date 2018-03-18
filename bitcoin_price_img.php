@@ -64,5 +64,5 @@
 	ImageCopy( $image, $maxicambios_logo,	57, 280, 0, 0, 127, 36 );
 
 	# render for save it
-	ImagePNG($image, $path.'twit.png');
+	ImagePNG($image, $path.'/twit.png');
 ?>
