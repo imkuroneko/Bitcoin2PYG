@@ -1,30 +1,23 @@
-Bitcoin2PYG v2
-===================
+### Bitcoin2PYG (Twitter Bot) v2.0b
+-----
 
-Este es un pequeño script creado para publicar vía Twitter la cotización del Bitcoin en Guaranies (PYG)
+Pequeño script para manejar un bot de cotización del Bitcoin en Twitter
 
-(y obligado a través de un cronjob para que haga el trabajo.)
+#### 📒 Las cotizaciones del Bitcoin son tomadas de:
+> - [Bitexla](https://bitex.la)
+> - [Bitfinex](https://bitfinex.com)
+> - [Bitstamp](https://bitstamp.net)
+> - [Coinbase](https://coinbase.com)
 
-### :octocat: Las cotizaciones del Bitcoin son tomadas de:
-
-> - [BitStamp](www.bitstamp.net)
-> - [Coinbase](www.coinbase.com)
-> - [Blockchain.info](www.blockchain.info)
-> - [XAPO](www.xapo.com)
-
-### :octocat: La cotización del dólar es tomada de:
-
-> [MaxiCambios](www.maxicambios.com.py)
+#### 📕 La cotización del dólar es tomada de:
+> [MaxiCambios](https://maxicambios.com.py)
 
 
-### :octocat: CronTab
+#### 📗 CronTab
+> Cada 60min
+> ` /usr/local/bin/php -q /home/user/public_html/bot_folder/bitcoin_price_img.php?key=random-string-goes-here`
 
-En el caso del bot, se utilizan actualmente 2 CronTab
-
-
-> Twit Uploader (cada 30min)
-> ` /usr/local/bin/php -q /home/user/public_html/bot_folder/tw1t.php `
-
-
-> Image Generator (cada min)
-> ` /usr/local/bin/php -q /home/user/public_html/bot_folder/bitcoin_price_img.php `
+#### 📘 Recursos y librerías utilizadas
+- APIs de las plataformas arriba mencionadas
+- `guzzlehttp/guzzle` para obtener el contenido necesario
+- `abraham/twitteroauth` para la interacción con la API de Twitter y subir el contenido
